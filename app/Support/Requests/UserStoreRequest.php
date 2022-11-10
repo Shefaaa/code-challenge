@@ -33,6 +33,13 @@ use Illuminate\Foundation\Http\FormRequest;
  *      description="User Password",
  *      example="correct horse battery staple",
  *   ),
+ *   @OA\Property(
+ *      property="nickname",
+ *      type="string",
+ *      example="JaneDoe",
+ *      description="User nickname",
+ *      maxLength=29,
+ *   ),
  * )
  */
 class UserStoreRequest extends FormRequest
@@ -59,6 +66,7 @@ class UserStoreRequest extends FormRequest
             'name'     => 'required|string|max:191|min:1',
             'email'    => 'required|email|unique:users',
             'password' => 'required|string|min:8|max:191',
+            'nickname' => 'nullable|unique:users|max:29',
         ];
     }
 }

@@ -25,9 +25,10 @@ class UserControllerTest extends FrameworkTest
         $result->assertSuccessful();
         $this->assertEquals(
             [
-                'id'    => $user->id,
-                'name'  => $user->name,
-                'email' => $user->email,
+                'id'       => $user->id,
+                'name'     => $user->name,
+                'email'    => $user->email,
+                'nickname' => $user->nickname,
             ],
             json_decode($result->getContent(), true)
         );
@@ -38,9 +39,10 @@ class UserControllerTest extends FrameworkTest
         /** @var User $user */
         $user   = $this->userFactory->create();
         $data = [
-            'id'    => $user->id,
-            'name'  => $this->faker->name,
-            'email' => $user->email,
+            'id'       => $user->id,
+            'name'     => $this->faker->name,
+            'email'    => $user->email,
+            'nickname' => $user->nickname,
         ];
         $result = $this->put("/api/users/$user->id", $data);
         $result->assertSuccessful();

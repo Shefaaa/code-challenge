@@ -34,6 +34,12 @@ class UserMapper extends Mapper
      *         description="name",
      *         example="Jane Doe",
      *     ),
+     *     @OA\Property(
+     *         property="nickname",
+     *         type="string",
+     *         description="nickname",
+     *         example="JaneDoe",
+     *     ),
      * ),
      *
      * @param User|Model $user
@@ -44,9 +50,10 @@ class UserMapper extends Mapper
     {
         /** @var User $user */
         return [
-            'id'    => $user->id,
-            'name'  => $user->name,
-            'email' => $user->email,
+            'id'       => $user->id,
+            'name'     => $user->name,
+            'email'    => $user->email,
+            'nickname' => $user->nickname,
         ];
     }
 }

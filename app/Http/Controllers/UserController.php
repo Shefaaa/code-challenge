@@ -84,6 +84,7 @@ class UserController extends Controller
             'name'     => $request->input('name'),
             'email'    => $request->input('email'),
             'password' => Hash::make($request->input('password')),
+            'nickname' => $request->input('nickname'),
         ]);
 
         return \Response::json($this->userMapper->single($user));
@@ -129,6 +130,7 @@ class UserController extends Controller
             'name'     => trim($request->input('name')),
             'email'    => trim($request->input('email')),
             'password' => Hash::make(trim($request->input('password')) ?: null),
+            'nickname' => trim($request->input('nickname')),
         ];
 
         $user->fill($data)->save();
