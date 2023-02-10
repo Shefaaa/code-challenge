@@ -28,10 +28,7 @@ The assignment is to add a column named `nickname` (via a migration) to the data
 3. Documentation should be updated so Swagger can be generated and used to smoke test.
    - We are using the open-source package [L5-Swagger](https://github.com/DarkaOnLine/L5-Swagger) to generate OpenAPI Swagger.
 
-### Submitting Your Work
-1. When you are ready to submit your work: do not open a PR. 
-2. Instead, push your changes to a public repository on GitHub and email a link to [cto@binogi.com](cto@binogi.com).
-3. In the email please specify your name in the subject field.
+
 
 ### Hints
 - The OpenAPI Swagger documentation can be generated on demand by running `docker-compose run --rm php /var/www/artisan l5-swagger:generate` in the root directory of the project.
